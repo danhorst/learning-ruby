@@ -22,12 +22,16 @@ class Hashes < Minitest::Test
     assert_equal 'default', subject.fetch(:missing, 'default')
   end
 
+  # A hash only returns its default value when accessed using an element reference
   def test_default_value
     subject = Hash.new(5)
     assert_equal 5, subject[:missing]
     assert_raises(KeyError) { subject.fetch(:missing) }
   end
 
+  # A Hash with a default value and other explicit values can serve as a lookup
+  # table. Lookup tables can be used to replace case statements. See:
+  # http://weblog.jamisbuck.org/2015/11/14/little-things-refactoring-with-hashes.html
   def test_default_value_with_specific_options
     subject = Hash.new('default').merge(specified: 6)
     assert_equal 6, subject[:specified]
