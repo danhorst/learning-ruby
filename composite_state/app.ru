@@ -1,12 +1,5 @@
 # frozen_string_literal: true
-require 'bundler/inline'
-
-gemfile(true) do
-  source 'https://rubygems.org'
-
-  gem 'rails', '~> 7.0.4'
-  gem 'sqlite3'
-end
+require 'bundler'
 
 require 'rails/all'
 database = 'development.sqlite3'

@@ -4,3 +4,9 @@
 
 # Temporary files
 *.swp
+
+# Local data stores
+*.sqlite3
+
+# Logs
+**/log/*
